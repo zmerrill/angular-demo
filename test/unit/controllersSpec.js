@@ -2,19 +2,17 @@
 
 /* jasmine specs for controllers go here */
 
-describe('controllers', function(){
-  beforeEach(module('myApp.controllers'));
+describe('PhoneListCtrl', function(){
 
+  beforeEach(module('phonecatApp'));
 
-  it('should ....', inject(function($controller) {
-    //spec body
-    var myCtrl1 = $controller('MyCtrl1', { $scope: {} });
-    expect(myCtrl1).toBeDefined();
+  it('should create "phones" model with 3 phones', inject(function($controller) {
+    var scope = {},
+        ctrl = $controller('PhoneListCtrl', {$scope:scope});
+
+    expect(scope.phones.length).toBe(3);
+    expect(scope.name).toBe('World');
   }));
 
-  it('should ....', inject(function($controller) {
-    //spec body
-    var myCtrl2 = $controller('MyCtrl2', { $scope: {} });
-    expect(myCtrl2).toBeDefined();
-  }));
+
 });

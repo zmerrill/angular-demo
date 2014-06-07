@@ -1,0 +1,27 @@
+<logout></logout>
+  <h3>Welcome back, {{user.username}}</h3>
+  <div class="row">
+    <div class="col-md-10">
+      <!--Body content-->
+      <ul class="stacks">
+         <li ng-repeat="stack in stacks" ng-click="selectStack(stack)" ng-class="{selected: stack.id == currentStackId}" style="cursor: pointer; cursor: hand;">
+          <a>{{stack.title}} - {{stack.subject.title}} - {{stack.user.email}}
+        </li>
+      </ul>
+      {{stacks.length}}
+    </div>
+  </div>
+  <button ng-click='toggleModal()'>Create New Stack...</button>
+  <modal-dialog show='modalShown' width='600px' height='60%' >
+
+    <form ng-submit="submit()" class="dark-matter" name="addStackForm"/>
+        <h1>Create new stack</h1> 
+        joov - {{subjectSelection}}
+        <input ng-model="stack.title" type="text" name="title" placeholder="Title" />
+        <select ng-model="subjectSelection" ng-options="i.title for i in subjects" ng-values="i.id for i in subjects">
+        </select>
+        <input ng-model="stack.rating" type="text" name="rating" placeholder="Rating" />
+        <input ng-model="stack.difficulty" type="text" name="difficulty" placeholder="Difficulty" />
+        <input type="submit" value="Create" class="button" ng-click="submit()"/>
+    </form>
+  </modal-dialog>

@@ -1,0 +1,17 @@
+<ul class="menu">
+    <li><a href="#signin">Sign In</a></li>
+    <li><a href="#register">Register</a></li>
+</ul>
+<div>
+
+<form ng-submit="submit()" class="dark-matter" >
+  <span></span>
+  <h1>Register Here...</h1>
+    <input ng-model="user.username" type="text" name="username" placeholder="Username" />
+    <input ng-model="user.email" type="text" name="email" placeholder="Email" />
+    <input ng-model="user.password" type="password" name="password" placeholder="Password" />
+    <input ng-model="user.password_confirmation" type="password" name="password_confirmation" placeholder="Password Confirmation" />
+    <input type="submit" value="Register Now" class="button" />
+  </form>
+</div>
+<login></login>

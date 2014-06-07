@@ -10,7 +10,9 @@ angular.module('myApp', [
   'myApp.controllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {templateUrl: 'partials/partial1.html', controller: 'MyCtrl1'});
-  $routeProvider.when('/view2', {templateUrl: 'partials/partial2.html', controller: 'MyCtrl2'});
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.when('/signin', {templateUrl: 'partials/signin.html', controller: 'LoginCtrl'});
+  $routeProvider.when('/register', {templateUrl: 'partials/register.html', controller: 'RegCtrl'});
+  $routeProvider.otherwise({redirectTo: '/register'});
 }]);
+
+
